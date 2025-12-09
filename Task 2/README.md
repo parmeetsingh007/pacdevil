@@ -9,11 +9,13 @@ Why PPO instead of DQN?
 
 Although Taxi-v3 can be solved using DQN, PPO was chosen because:
 
-                 PPO	                                                DQN
-Uses a policy-gradient method	                            Uses Q-learning
-Handles continuous & discrete action spaces	                Works mainly with discrete actions
-Trains using batches from multiple trajectories (stable)	Sensitive to hyperparameters & replay buffer
-Clip-based loss prevents large policy updates	            Can become unstable if Q-values diverge
+| PPO | DQN |
+|-----|-----|
+| Uses a policy-gradient method | Uses Q-learning |
+| Handles continuous & discrete action spaces | Works mainly with discrete actions |
+| Trains using batches from multiple trajectories (more stable) | Sensitive to replay buffer + hyperparameters |
+| Clip-based loss prevents large policy updates (stays stable during training) | Q-values can diverge causing instability |
+
 
 In simpler terms:
 PPO is more stable while learning because it prevents sudden big jumps in the policy.
